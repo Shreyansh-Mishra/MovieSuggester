@@ -18,12 +18,8 @@ export default function Home() {
             }).then(()=>{
                 history.push(`/movie/${movie2.title}`)
             })
-        })
-        
+        })   
     }
-
-    
-
     return (
         <div>
             <div className="create">

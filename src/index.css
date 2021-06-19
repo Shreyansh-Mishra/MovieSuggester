@@ -95,7 +95,7 @@
 }
 .create button {
   background: #f1356d;
-  color: #fff;
+  color: rgb(12, 11, 11);
   border: 0;
   padding: 8px;
   border-radius: 8px;
@@ -108,4 +108,181 @@
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
+}
+
+html,
+body,
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Roboto", Arial, Verdana, sans-serif;
+  background: #eee;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  width: 37.5rem;
+  height: 21.25rem;
+  
+  background-position: -60px 42px, 0;
+  background-repeat: no-repeat;
+  background-size: 70% 88%;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.15);
+}
+
+.card__inner {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.list {
+  display: flex;
+}
+
+.list--nav {
+  justify-content: space-around;
+}
+.list--nav li {
+  width: calc(100%/3);
+  background: #111;
+  transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+.list--nav li:focus, .list--nav li:hover {
+  background: #333;
+}
+.list--nav li:first-of-type {
+  background: #292929;
+}
+.list--nav a {
+  display: block;
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.125rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(12, 11, 11);;
+}
+
+.card__body {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card__info,
+.card__footer {
+  color: #fff;
+}
+
+.card__info {
+  position: relative;
+  padding-right: 1.25rem;
+  float: right;
+  width: 50%;
+}
+
+.card__title {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card__slug {
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.card__btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  color: #fff;
+  background: #c62828;
+  border: 0;
+  border-radius: 2.1875rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: all 0.2s cubic-bezier(0.4, 0, 1, 1);
+}
+.card__btn:focus, .card__btn:hover {
+  color: #fff;
+  background: #dc5454;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card__rating {
+  display: inline-block;
+  position: relative;
+  padding: 1rem;
+  margin-left: 3rem;
+  color: #fff;
+  border-radius: 50%;
+  border: 3px solid #c62828;
+}
+.card__rating:before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -5px;
+  left: 0;
+  width: 50%;
+  height: 20px;
+  background: #000;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding-top: 1rem;
+  padding-right: 1.25rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.list--info {
+  padding-left: 1rem;
+  float: right;
+  justify-content: space-between;
+  width: 50%;
+}
+.list--info li {
+  font-size: 0.85rem;
+}
+.list--info li:nth-of-type(n+2) {
+  margin-left: 1rem;
 }
