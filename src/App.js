@@ -3,15 +3,17 @@ import Home from './Home.js';
 import React from 'react';
 import Notfound from './Notfound.js'
 import Watchlist from './Watchlist.js'
-import Random from './Movie.js'
+import Movie from './Movie.js'
+import Download from './Download.js'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 function App() {
   return (
     <Router>
-    <div className="App">
+    
+      
       <Navbar />
       <div className="content">
-      <Switch>  
+      <Switch>
         <Route path="/" exact>
               <Home />
         </Route>
@@ -19,12 +21,14 @@ function App() {
               <Watchlist />
         </Route>
         <Route path="/movie/:name">
-              <Random />
+              <Movie />
         </Route>
-      </Switch>
+        <Route path="/download/:name">
+              <Download />
+        </Route>
+        </Switch>
       </div>
-      
-    </div>
+    
     </Router>
   );
 }
