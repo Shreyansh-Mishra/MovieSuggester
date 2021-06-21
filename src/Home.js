@@ -8,11 +8,12 @@ export default function Home() {
     
     let handleSubmit=(e)=>{
         e.preventDefault();
-        fetch("http://localhost:8000/genre/")
+        fetch("http://localhost:8000/genre")
         .then((res)=>{
             let movie2
             res.json().then(d=>{
-                let gen = d.find(e=>e.type===genre.toLowerCase())
+                console.log(d)
+                let gen = d.genre.find(e=>e.type===genre.toLowerCase())
                 let selected = gen.movies.filter(m=>m.rating>=rating)
                 movie2 = selected[Math.floor(Math.random() * selected.length)]
             }).then(()=>{

@@ -1,22 +1,31 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import {useState, useEffect} from 'react'
-export default function Random() {
-    let {name} = useParams()
+import { useHistory } from 'react-router'
+export default function Movie(props) {
+    let history = useHistory()
+    let name = useParams()
     let [movieData,setMovieData]=useState(null)
     let [isPending,setIsPending]=useState(true)
-
+    
     const mystyle={
         "margin-left":"50px"
     }
-    useEffect(()=>{
-        fetch(`http://www.omdbapi.com/?t=${name}&apikey=e420a177`).then((res)=>{
+    let [mname,setmname] = useState((window.location.href).split('/')[4])
+    useEffect(()=>{ 
+        setmname((window.location.href).split('/')[4])    
+        fetch(`http://www.omdbapi.com/?t=${mname}&apikey=e420a177`).then((res)=>{
         res.json().then((p)=>{
             setMovieData(p)
             setIsPending(false)
         })
     })
     },[])
+
+    let handleDownload = () =>{
+      console.log(movieData.Title)
+      history.push(`/download/${movieData.Title}`)
+    }
 
     console.log(movieData)
     return (
@@ -33,7 +42,7 @@ export default function Random() {
     
         <p class="card__slug">{movieData.Plot}</p>
       
-        <button class="card__btn" value="Watch trailer">Watch trailer</button>
+        <button class="card__btn" value="Download" onClick={handleDownload}>Download</button>
 
         <div class="card__rating">
           {movieData.imdbRating}
