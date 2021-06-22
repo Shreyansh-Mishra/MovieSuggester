@@ -7,7 +7,7 @@ export default function Movie(props) {
     let name = useParams()
     let [movieData,setMovieData]=useState(null)
     let [isPending,setIsPending]=useState(true)
-    
+    let [isError, setIsError] = useState(false)
     const mystyle={
         "margin-left":"50px"
     }
@@ -16,6 +16,10 @@ export default function Movie(props) {
         setmname((window.location.href).split('/')[4])    
         fetch(`http://www.omdbapi.com/?t=${mname}&apikey=e420a177`).then((res)=>{
         res.json().then((p)=>{
+          console.log("p: "+p.Response)
+          if(p.Response==='False'){
+            setIsError(true)
+          }
             setMovieData(p)
             setIsPending(false)
         })
@@ -23,16 +27,15 @@ export default function Movie(props) {
     },[])
 
     let handleDownload = () =>{
-      console.log(movieData.Title)
       history.push(`/download/${movieData.Title}`)
     }
 
     console.log(movieData)
     return (
         <div>
+          {console.log("error ye rha:"+isError)}
             {isPending&&<div>Loading...</div>}
-            {movieData&&<div class="card" style={{"background-color":"#D2C3C3"}}>
-            {console.log(movieData.Poster)}
+            {!isError&&movieData&&<div class="card" style={{"background-color":"#D2C3C3"}}>
   <div class="card__inner" >
     
     <main class="card__body">
@@ -59,6 +62,7 @@ export default function Movie(props) {
     </footer>
   </div>
 </div>}
+{isError&&<center><div>Movie Not Found</div></center>}
         </div>
     )
     

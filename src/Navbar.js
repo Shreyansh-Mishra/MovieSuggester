@@ -11,6 +11,7 @@ export default function Navbar(props) {
         console.log(props)
         history.push(`/movie/${movieName}`)
         history.go(0);
+        
     }
 
     const handleKeypress = e => {
