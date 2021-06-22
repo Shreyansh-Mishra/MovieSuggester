@@ -17,10 +17,10 @@ export default function Download() {
     return (
         <div>
             <center><h1>{name}</h1></center>
+            {isPending && <div>Loading...</div>}
             {links&&<div>
-                
                 {links.map(link=>{
-                    return <Dlink link={link} isPending={isPending} />
+                    return <Dlink link={link}/>
                 })}
                 </div>}
         </div>
