@@ -24,15 +24,31 @@ export default function Home() {
     return (
         <div>
             <div className="create">
+                <h1>Suggest a Random Movie</h1><br></br>
                 <form onSubmit={handleSubmit}>
-                <label>Genre:</label>
+                <label><b>Genre:</b></label>
                     <select value={genre} onChange = {(e)=>setGenre(e.target.value)}>
                         <option value="Action">Action</option>
                         <option value="Adventure">Adventure</option>
                         <option value="Romance">Romance</option>
-                        <option value="Comedy">Comedy</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="Biography">Biography</option>
+                        <option value="Crime">Crime</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Family">Family</option>
+                        <option value="History">History</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Music">Music</option>
+                        <option value="Mystery">Mystery</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Sci-fi">Sci-fi</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Superhero">Superhero</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="War">War</option>
                     </select>
-                    <label>Rating:</label><input type="number" min="0" max="10" step="0.1" value={rating} onChange= {(e)=>setRating(e.target.value)}></input>
+                    <label><b>Rating:</b></label><input type="number" min="0" max="10" step="0.1" value={rating} onChange= {(e)=>setRating(e.target.value)}></input>
                     <button>Submit</button>
                 </form>
             </div>        
