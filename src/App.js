@@ -4,6 +4,7 @@ import React from 'react';
 import Notfound from './Notfound.js'
 import Watchlist from './Watchlist.js'
 import Movie from './Movie.js'
+import Movies from './Movies.js'
 import Download from './Download.js'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 function App() {
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/movie/:name">
               <Movie />
+        </Route>
+        <Route path="/movies/:name">
+              <Movies />
         </Route>
         <Route path="/download/:name">
               <Download />

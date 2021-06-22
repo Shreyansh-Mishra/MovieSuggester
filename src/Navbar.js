@@ -9,8 +9,15 @@ export default function Navbar(props) {
 
     let handleClick = () =>{
         console.log(props)
-        history.push(`/movie/${movieName}`)
-        history.go(0);
+        console.log(window.location.href.split('/')[3])
+        if(window.location.href.split('/')[3]==='movie'){
+            console.log('andar hu')
+            history.push(`/movies/${movieName}`)
+        }
+        else{
+            history.push(`/movie/${movieName}`)
+        }
+        
         
     }
 
