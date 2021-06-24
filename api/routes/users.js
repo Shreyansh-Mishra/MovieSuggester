@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var genreData = require("../../data/data.json")
+var genreData = require("../data/data.json")
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
