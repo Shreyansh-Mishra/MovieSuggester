@@ -8,7 +8,8 @@ export default function Download() {
     let [isPending, setIsPending] = useState(true)
     useEffect(()=>{
         console.log(name)
-        fetch(`http://localhost:8000/getlinks/${name}`)
+        console.log(`${process.env.REACT_APP_SERVER_IP}getlinks/${name}`)
+        fetch(`${process.env.REACT_APP_SERVER_IP}getlinks/${name}`)
         .then(res => res.json().then(r=>{
             setLinks(r)
             setIsPending(false)
