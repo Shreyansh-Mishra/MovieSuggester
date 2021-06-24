@@ -8,7 +8,7 @@ export default function Home() {
     
     let handleSubmit=(e)=>{
         e.preventDefault();
-        fetch("http://localhost:8000/genre")
+        fetch(`${process.env.REACT_APP_SERVER_IP}genre`)
         .then((res)=>{
             let movie2
             res.json().then(d=>{

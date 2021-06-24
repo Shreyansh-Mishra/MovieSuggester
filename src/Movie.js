@@ -40,21 +40,21 @@ export default function Movie(props) {
     
     <main class="card__body">
     <img src={`${movieData.Poster}`} height="25%" width="25%" style={mystyle}></img>
-      <div class="card__info">
-        <h1 class="card__title">{movieData.Title}</h1>
+      <div className="card__info">
+        <h1 className="card__title">{movieData.Title}</h1>
     
-        <p class="card__slug">{movieData.Plot}</p>
+        <p className="card__slug">{movieData.Plot}</p>
       
-        <button class="card__btn" value="Download" onClick={handleDownload}>Download</button>
+        <button className="card__btn" value="Download" onClick={handleDownload}>Download</button>
 
-        <div class="card__rating">
+        <div className="card__rating">
           {movieData.imdbRating}
         </div>
       </div>
     </main>
     
-    <footer class="card__footer">
-      <ul class="list list--info" style={{"margin-right":"30px"}}>
+    <footer className="card__footer">
+      <ul className="list list--info" style={{"margin-right":"30px"}}>
         <li>{movieData.Released}</li>
         <li>{movieData.Runtime}</li>
         <li>{movieData.Genre}</li>
