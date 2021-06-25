@@ -1,0 +1,11 @@
+---
+application:
+  name: "moviesuggestor"
+  project: "MovieSuggestorBackend"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-moviesuggestor"
+  routes:
+  - application_name: "moviesuggestor"
+    paths:
+    - "/*"
