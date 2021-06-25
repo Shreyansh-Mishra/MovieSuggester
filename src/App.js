@@ -2,7 +2,6 @@ import Navbar from './Navbar.js';
 import Home from './Home.js';
 import React from 'react';
 import Notfound from './Notfound.js'
-import Watchlist from './Watchlist.js'
 import Movie from './Movie.js'
 import Movies from './Movies.js'
 import Download from './Download.js'
@@ -18,9 +17,6 @@ function App() {
         <Route path="/" exact>
               <Home />
         </Route>
-        <Route path="/watchlist" exact>
-              <Watchlist />
-        </Route>
         <Route path="/movie/:name">
               <Movie />
         </Route>
@@ -29,6 +25,9 @@ function App() {
         </Route>
         <Route path="/download/:name">
               <Download />
+        </Route>
+        <Route path="*">
+              <Notfound />
         </Route>
         </Switch>
       </div>

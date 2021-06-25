@@ -14,7 +14,7 @@ export default function Movie(props) {
     let [mname,setmname] = useState((window.location.href).split('/')[4])
     useEffect(()=>{ 
         setmname((window.location.href).split('/')[4])    
-        fetch(`http://www.omdbapi.com/?t=${mname}&apikey=e420a177`).then((res)=>{
+        fetch(`https://www.omdbapi.com/?t=${mname}&apikey=e420a177`).then((res)=>{
         res.json().then((p)=>{
           console.log("p: "+p.Response)
           if(p.Response==='False'){
