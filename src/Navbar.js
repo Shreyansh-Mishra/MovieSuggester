@@ -31,11 +31,11 @@ export default function Navbar(props) {
     return (
         <div>
             <nav className="navbar topnav">
-                <Link to="/"><h1>RandomWatch</h1></Link>
+                <h1>RandomWatch</h1>
                 <div className="links">
                 <input type="text" placeholder="Search Movie" size="70" value={movieName} onChange={(e)=>setMovieName(e.target.value)} onKeyDown={handleKeypress} />
                 <button onClick={()=>handleClick()}>Search</button>
-                    <Link to ="/watchlist">Watch List</Link>    
+                <Link to="/">Home</Link> 
                 </div>    
             </nav>            
         </div>
